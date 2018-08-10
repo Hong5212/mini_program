@@ -12,6 +12,8 @@
 }
 
 .movie_name {
+  text-align: center;
+  width: 70%;
 	font-size: 40rpx;
 	font-weight: bold;
 }
