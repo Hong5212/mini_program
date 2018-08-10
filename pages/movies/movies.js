@@ -1,6 +1,7 @@
-// pages/list/list.js
-let datas = require('../../datas/list-data.js')
-// console.log(datas, typeof datas)
+// pages/movies/movies.js
+const MOVIE_URL = 'http://t.yushu.im/v2/movie/top250';
+let appDatas = getApp()
+// console.log(appDatas)
 
 Page({
 
@@ -8,32 +9,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listArr: []
+    moviesArr: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 获取数据
-    this.setData({
-      listArr: datas.list_data 
-    })
-  },
-
-  toDetail(event){
-    // console.log(event)
-    let {index} = event.currentTarget.dataset
-    wx.navigateTo({
-      url: '/pages/detail/detail?index=' + index,
-    })
-  },
-
-  carouselToDetail(event){
-    // console.log(event)
-    let {index} = event.target.dataset
-    wx.navigateTo({
-      url: '/pages/detail/detail?index=' + index,
+    wx.request({
+      url: MOVIE_URL, //请求接口地址
+      success: (datas) => {
+        this.setData({
+          moviesArr: datas.data.subjects
+        })
+        // console.log(this.data.moviesArr);
+        // console.log(appDatas.data.moviseArr);
+        appDatas.data.moviseArr = this.data.moviesArr;
+        // console.log(appDatas.data.moviseArr);
+      }
     })
   },
 

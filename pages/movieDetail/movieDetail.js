@@ -1,6 +1,6 @@
-// pages/list/list.js
-let datas = require('../../datas/list-data.js')
-// console.log(datas, typeof datas)
+// pages/movieDetail/movieDetail.js
+let appDatas = getApp()
+// console.log(appDatas)
 
 Page({
 
@@ -8,32 +8,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listArr: []
+    movieDetail: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 获取数据
+    // console.log(options)
     this.setData({
-      listArr: datas.list_data 
-    })
-  },
-
-  toDetail(event){
-    // console.log(event)
-    let {index} = event.currentTarget.dataset
-    wx.navigateTo({
-      url: '/pages/detail/detail?index=' + index,
-    })
-  },
-
-  carouselToDetail(event){
-    // console.log(event)
-    let {index} = event.target.dataset
-    wx.navigateTo({
-      url: '/pages/detail/detail?index=' + index,
+      movieDetail: appDatas.data.moviseArr[options.index]
     })
   },
 

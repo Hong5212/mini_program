@@ -1,0 +1,20 @@
+<!--pages/detail/detail.wxml-->
+<view class='detail_container'>
+  <image class='headerImg' src='{{isMusicPlay?detailObj.music.coverImgUrl:detailObj.detail_img}}'></image>
+  <image class='musicImg' src='{{isMusicPlay?"/images/music/music-start.png":"/images/music/music-stop.png"}}' catchtap='musicPlay'></image>
+  <view class='avater_date'>
+    <image src='{{detailObj.avatar}}'></image>
+    <text>{{detailObj.date}}</text>
+  </view>
+  <text class='company'>{{detailObj.title}}</text>
+  <view class='collection_share_container'>
+    <view class='collection_share'>
+      <image catchtap='handleCollection' 
+      src='{{isCollected?"/images/icon/collection.png":"/images/icon/collection-anti.png"}}'></image>
+      <image src='/images/icon/share.png' catchtap='handleShare'></image>
+    </view>
+    <text class='line'></text>
+  </view>
+  <button class='transpond' open-type='share'>转发此文章</button>
+  <text class='content'>{{detailObj.detail_content}}</text>
+</view>
