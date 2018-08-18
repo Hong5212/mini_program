@@ -32,18 +32,18 @@
 - 冒泡事件：`bind` + 事件名
 - 非冒泡事件：`catch` + 事件名
 
-### 模板template
+### 7. 模板template
   1. 定义：template 属性： name(标识模板)
   2. 使用：template 属性： is(模板的name)
   3. 引入模板结构： <import src='路径'/>
   4. 引入模板样式： @import '路径'
   5. 传参： data='{{...item}}'
-### 列表渲染
+### 8. 列表渲染
   1. wx:for
   2. wx:key为每个个体元素进行标记
   3. 遍历的个体： item
   4. 遍历的下标： index
-### 本地缓存（setStorage, setStorageSync）
+### 9. 本地缓存（setStorage, setStorageSync）
   1. 缓存的是用户是否收藏当前文章： {0: true, 1: false}
   2. 注意：
     1. 缓存之前应该先去获取之前本地缓存的数据
